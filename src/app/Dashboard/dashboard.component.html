@@ -2,33 +2,50 @@
   <nav>
     <a class = "col-1-3">
       <div class = "module">
-        <h4>Click to Report Error</h4>
+        <h3>Click to Report Error</h3>
       </div>
     </a>
     <a routerLink="/errprevention" routerLinkActive="active" class = "col-1-3">
       <div class = "module" >
-        <h4>Click to run Error Prevention Algorithm</h4>
+        <h3>Click to run Error Prevention Algorithm</h3>
       </div>
     </a>
     <a  class = "col-1-3">
       <div class = "module">
-        <h4>Click to Run Error Detection Algorithm</h4>
-      </div>
-    </a>
-    <a  class = "col-1-3">
-      <div class = "module option">
-        <h4>Click to Check Trade Booking Details</h4>
+        <h3>Click to Run Error Detection Algorithm</h3>
       </div>
     </a>
     <a  class = "col-1-3">
       <div class = "module">
-        <h4>Click to Generate P&L</h4>
+        <h3>Click to Check Trade Booking Details</h3>
       </div>
     </a>
     <a  class = "col-1-3">
       <div class = "module">
-        <h4>View Issue Catcher Logs</h4>
+        <h3>Click to Generate P&L</h3>
+      </div>
+    </a>
+    <a  class = "col-1-3">
+      <div class = "module">
+        <h3>View Issue Catcher Logs</h3>
+      </div>
+    </a>
+    <a  class = "col-1-1" (click)="popup.show()">
+      <div class = "add">
+        <h1>Add a New Trading Record</h1>
       </div>
     </a>
   </nav>
+  <app-popup #popup>
+    <div class="app-modal-header">
+      Create New Trade
+    </div>
+    <div class="app-modal-body">
+      Whatever content you like, form fields, anything
+    </div>
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-default" (click)="popup.hide()">Cancel</button>
+      <button type="button" class="btn btn-primary">Add</button>
+    </div>
+  </app-popup>
 </div>
