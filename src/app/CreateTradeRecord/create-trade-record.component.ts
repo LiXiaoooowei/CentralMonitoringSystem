@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 
 @Component({
   selector: 'app-popup',
@@ -7,11 +8,13 @@ import {Component} from '@angular/core';
 })
 
 export class CreateTradeRecordComponent {
+  @Input() tradeTime: String;
+  @Input() tradeSymbol: String;
+  @Input() tradeAmt: String;
   public visible = false;
   public visibleAnimate = false;
 
   public show(): void {
-    console.log('show');
     this.visible = true;
     setTimeout(() => this.visibleAnimate = true, 100);
   }
@@ -19,6 +22,11 @@ export class CreateTradeRecordComponent {
   public hide(): void {
     this.visibleAnimate = false;
     setTimeout(() => this.visible = false, 300);
+  }
+
+  public add(): void {
+    console.log(this.tradeTime + ' ' + this.tradeSymbol + ' ' + this.tradeAmt);
+    this.hide();
   }
 
   public onContainerClicked(event: MouseEvent): void {

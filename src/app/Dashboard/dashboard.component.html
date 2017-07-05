@@ -41,11 +41,16 @@
       Create New Trade
     </div>
     <div class="app-modal-body">
-      Whatever content you like, form fields, anything
+      <label>Time: </label>
+      <input [(ngModel)]="popup.tradeTime" placeholder="enter time"/>
+      <label>Symbol: </label>
+      <input [(ngModel)]="popup.tradeSymbol" placeholder="enter symbol"/>
+      <label>Amount: </label>
+      <input [(ngModel)]="popup.tradeAmt" placeholder="enter amount"/>
     </div>
     <div class="app-modal-footer">
       <button type="button" class="btn btn-default" (click)="popup.hide()">Cancel</button>
-      <button type="button" class="btn btn-primary">Add</button>
+      <button type="button" class="btn btn-primary" (click)="popup.add()">Add</button>
     </div>
   </app-popup>
 </div>
