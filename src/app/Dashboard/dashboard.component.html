@@ -42,9 +42,11 @@
     </div>
     <div class="app-modal-body">
       <label>Time: </label>
-      <input [(ngModel)]="popup.tradeTime" placeholder="enter time"/>
+      <input [(ngModel)]="popup.tradeTime" placeholder="YYYY-MM-DD HH:MM:SS"/>
       <label>Symbol: </label>
       <input [(ngModel)]="popup.tradeSymbol" placeholder="enter symbol"/>
+      <label>Price: </label>
+      <input [(ngModel)]="popup.priceInt" placeholder="enter price quote"/>
       <label>Amount: </label>
       <input [(ngModel)]="popup.tradeAmt" placeholder="enter amount"/>
     </div>

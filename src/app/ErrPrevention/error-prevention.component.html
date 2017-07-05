@@ -1,2 +1,43 @@
-<H1>This is the error prevention page</H1>
-<button (click)="goBack()">Back</button>
+<button (click)="goBack()" class="btn btn-default">Back</button>
+<div class="panel-body row">
+  <div class="table-responsive col-md-7">
+    <table class="table table-bordered">
+      <tr>
+        <th>Trade Ref</th>
+        <th>Time</th>
+        <th>Symbol</th>
+        <th>Quantity</th>
+        <th>Price Quote Int.</th>
+        <th>Price Quote Ext.</th>
+      </tr>
+      <tr *ngFor="let record of tradeRecords | async">
+        <td>Trade Ref</td>
+        <td>{{record.time}}</td>
+        <td>{{record.symbol}}</td>
+        <td>{{record.amount}}</td>
+        <td>{{record.price_int}}</td>
+        <td id="{{record.symbol+record.time}}">{{getQuote(record.symbol, record.time)}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-5">
+    <table class="table">
+      <tr>
+        <th>Time</th>
+        <th>Symbol</th>
+        <th>Int.</th>
+        <th>Ext.</th>
+        <th>Actions</th>
+      </tr>
+      <tr>
+        <td>Today</td>
+        <td>AAPL</td>
+        <td>112</td>
+        <td>224</td>
+        <td>
+          <button class="btn btn-success">Correct</button>
+          <button class="btn btn-danger">Ignore</button></td>
+      </tr>
+    </table>
+  </div>
+</div>

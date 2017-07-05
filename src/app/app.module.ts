@@ -13,6 +13,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {DashboardComponent} from './Dashboard/dashboard.component';
 import {ErrorPreventionComponent} from './ErrPrevention/error-prevention.component';
 import {StockQuoteService} from './Services/stock-quote.service';
+import {FirebaseClientService} from './Services/firebase-client.service';
 import {CreateTradeRecordComponent} from './CreateTradeRecord/create-trade-record.component';
 import {LoginComponent} from './Login/login.component';
 
@@ -33,7 +34,7 @@ import {LoginComponent} from './Login/login.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [StockQuoteService],
+  providers: [StockQuoteService, FirebaseClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

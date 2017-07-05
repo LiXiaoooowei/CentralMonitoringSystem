@@ -1,6 +1,4 @@
 import {Component, Input} from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
@@ -11,14 +9,15 @@ import * as firebase from 'firebase/app';
 })
 
 export class CreateTradeRecordComponent {
-  @Input() tradeTime: String;
-  @Input() tradeSymbol: String;
-  @Input() tradeAmt: String;
+  @Input() tradeTime: string;
+  @Input() tradeSymbol: string;
+  @Input() tradeAmt: string;
+  @Input() priceInt: string;
 
   public visible = false;
   public visibleAnimate = false;
 
-  constructor(public afAuth: AngularFireAuth) {}
+  constructor(private afAuth: AngularFireAuth) {}
 
   public show(): void {
     this.visible = true;
@@ -36,7 +35,8 @@ export class CreateTradeRecordComponent {
     userRef.child('records').push({
       'amount': this.tradeAmt,
       'symbol': this.tradeSymbol,
-      'time': this.tradeTime
+      'time': this.tradeTime,
+      'price_int': this.priceInt
     });
     this.hide();
   }
