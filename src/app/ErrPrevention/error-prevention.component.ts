@@ -8,7 +8,6 @@ import {StockQuoteService} from '../Services/stock-quote.service';
 
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-errprevention',
@@ -31,6 +30,19 @@ export class ErrorPreventionComponent {
            price_ext: val
          });
       }).catch();
+   }
+
+   correctQuote(symbol, time, price_ext): void {
+     firebase.database().ref().child('traders').child(firebase.auth().currentUser.uid).child('records').child(time + symbol)
+       .update({
+         price_int: price_ext
+       });
+   }
+   ignoreQuote(symbol, time): void {
+     firebase.database().ref().child('traders').child(firebase.auth().currentUser.uid).child('records').child(time + symbol)
+       .update({
+         hide: true
+       });
    }
 
    goBack(): void {

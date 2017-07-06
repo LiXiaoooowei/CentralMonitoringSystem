@@ -36,7 +36,8 @@ export class CreateTradeRecordComponent {
       'amount': this.tradeAmt,
       'symbol': this.tradeSymbol,
       'time': this.tradeTime,
-      'price_int': this.priceInt
+      'price_int': this.priceInt,
+      'hide': false
     });
     this.hide();
   }
