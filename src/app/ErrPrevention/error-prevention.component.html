@@ -29,12 +29,12 @@
         <th>Ext.</th>
         <th>Actions</th>
       </tr>
-      <tr>
-        <td>Today</td>
-        <td>AAPL</td>
-        <td>112</td>
-        <td>224</td>
-        <td>
+      <tr *ngFor="let quote of tradeRecords | async">
+        <td *ngIf="quote.price_int !== quote.price_ext">{{quote.time}}</td>
+        <td *ngIf="quote.price_int !== quote.price_ext">{{quote.symbol}}</td>
+        <td *ngIf="quote.price_int !== quote.price_ext">{{quote.price_int}}</td>
+        <td *ngIf="quote.price_int !== quote.price_ext">{{quote.price_ext}}</td>
+        <td *ngIf="quote.price_int !== quote.price_ext">
           <button class="btn btn-success">Correct</button>
           <button class="btn btn-danger">Ignore</button></td>
       </tr>

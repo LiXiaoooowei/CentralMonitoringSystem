@@ -30,9 +30,9 @@ export class CreateTradeRecordComponent {
   }
 
   public add(): void {
-    console.log(this.tradeTime + ' ' + this.tradeSymbol + ' ' + this.tradeAmt);
+    const id = this.tradeTime + this.tradeSymbol;
     const userRef = firebase.database().ref().child('traders').child(this.afAuth.auth.currentUser.uid);
-    userRef.child('records').push({
+    userRef.child('records').child(id).set({
       'amount': this.tradeAmt,
       'symbol': this.tradeSymbol,
       'time': this.tradeTime,
