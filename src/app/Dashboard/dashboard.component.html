@@ -1,21 +1,21 @@
 <div class = "grid grid-pad">
   <nav>
-    <a class = "col-1-3">
+    <a routerLink="/trader" routerLinkActive="active" class = "col-1-3">
       <div class = "module">
         <h3>Click to Report Error</h3>
       </div>
     </a>
-    <a routerLink="/errprevention" routerLinkActive="active" class = "col-1-3">
+    <a class = "col-1-3" (click)="navigate()">
       <div class = "module" >
         <h3>Click to run Error Prevention Algorithm</h3>
       </div>
     </a>
-    <a  class = "col-1-3">
+    <a routerLink="/errdetection" routerLinkActive="active" class = "col-1-3">
       <div class = "module">
         <h3>Click to Run Error Detection Algorithm</h3>
       </div>
     </a>
-    <a  class = "col-1-3">
+    <a routerLink="/tradebooking" routerLinkActive="active" class = "col-1-3">
       <div class = "module">
         <h3>Click to Check Trade Booking Details</h3>
       </div>

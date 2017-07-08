@@ -1,0 +1,10 @@
+<h1>Please Select Your Issue Type: </h1>
+<ul class="heroes">
+  <li *ngFor="let issue of issues"><span><h3>
+    <input type="checkbox" class="badge" (click)="issue.selected = !issue.selected">{{issue.desp}}</h3></span></li>
+</ul>
+<h1>Others(Please Specify):</h1>
+<textarea class="form-control" rows="3" placeholder="Please specify your issue..."></textarea>
+<button type="button" class="btn btn-primary btn-lg custom-btn pull-right" (click)="onSubmit()">Submit</button>
+<button type="button" class="btn btn-default btn-lg custom-btn pull-right" (click)="goBack()">Cancel</button>
+

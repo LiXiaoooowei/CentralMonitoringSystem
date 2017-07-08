@@ -16,6 +16,9 @@ import {StockQuoteService} from './Services/stock-quote.service';
 import {FirebaseClientService} from './Services/firebase-client.service';
 import {CreateTradeRecordComponent} from './CreateTradeRecord/create-trade-record.component';
 import {LoginComponent} from './Login/login.component';
+import {TraderErrorReportComponent} from './CustomerErrRpt/trader-error-report';
+import {ErrorDetectionComponent} from './ErrDetect/error-detection.component';
+import {TradeBookingComponent} from './TradeBookingDetails/trade-booking.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import {LoginComponent} from './Login/login.component';
     DashboardComponent,
     ErrorPreventionComponent,
     CreateTradeRecordComponent,
-    LoginComponent
+    LoginComponent,
+    TraderErrorReportComponent,
+    ErrorDetectionComponent,
+    TradeBookingComponent
   ],
   imports: [
     HttpModule,
