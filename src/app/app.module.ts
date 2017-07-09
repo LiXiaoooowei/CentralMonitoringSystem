@@ -19,6 +19,7 @@ import {LoginComponent} from './Login/login.component';
 import {TraderErrorReportComponent} from './CustomerErrRpt/trader-error-report';
 import {ErrorDetectionComponent} from './ErrDetect/error-detection.component';
 import {TradeBookingComponent} from './TradeBookingDetails/trade-booking.component';
+import {IssueCatcherComponent} from './IssueCatcher/issue-catcher.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {TradeBookingComponent} from './TradeBookingDetails/trade-booking.compone
     LoginComponent,
     TraderErrorReportComponent,
     ErrorDetectionComponent,
-    TradeBookingComponent
+    TradeBookingComponent,
+    IssueCatcherComponent
   ],
   imports: [
     HttpModule,

@@ -35,8 +35,8 @@
         <td *ngIf="quote.price_int !== quote.price_ext && !quote.hide">{{quote.price_int}}</td>
         <td *ngIf="quote.price_int !== quote.price_ext && !quote.hide">{{quote.price_ext}}</td>
         <td *ngIf="quote.price_int !== quote.price_ext && !quote.hide">
-          <button class="btn btn-success" (click)="correctQuote(quote.symbol, quote.time, quote.price_ext)">Correct</button>
-          <button class="btn btn-danger" (click)="ignoreQuote(quote.symbol, quote.time)">Ignore</button></td>
+          <button class="btn btn-success" (click)="correctQuote(quote.symbol, quote.time, quote.price_ext, quote.price_int, quote.amount)">Correct</button>
+          <button class="btn btn-danger" (click)="ignoreQuote(quote.symbol, quote.time, quote.price_ext, quote.price_int, quote.amount)">Ignore</button></td>
       </tr>
     </table>
   </div>

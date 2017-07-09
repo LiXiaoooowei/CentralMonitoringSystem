@@ -7,6 +7,7 @@ import {LoginComponent} from './Login/login.component';
 import {TraderErrorReportComponent} from './CustomerErrRpt/trader-error-report';
 import {ErrorDetectionComponent} from './ErrDetect/error-detection.component';
 import {TradeBookingComponent} from './TradeBookingDetails/trade-booking.component';
+import {IssueCatcherComponent} from './IssueCatcher/issue-catcher.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'trader', component: TraderErrorReportComponent},
   { path: 'errdetection', component: ErrorDetectionComponent},
-  { path: 'tradebooking', component: TradeBookingComponent}
+  { path: 'tradebooking', component: TradeBookingComponent},
+  { path: 'issuecatcher', component: IssueCatcherComponent}
 ];
 
 @NgModule({
