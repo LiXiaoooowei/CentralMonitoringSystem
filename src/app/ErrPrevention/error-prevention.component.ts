@@ -75,7 +75,7 @@ export class ErrorPreventionComponent {
     if (parseInt(dd, 10) < 10) {
       dd = '0' + dd;
     }
-    let mm = (new Date()).getMonth().toString(10);
+    let mm = ((new Date()).getMonth() + 1).toString(10);
     if (parseInt(mm, 10) < 10) {
       mm = '0' + mm;
     }

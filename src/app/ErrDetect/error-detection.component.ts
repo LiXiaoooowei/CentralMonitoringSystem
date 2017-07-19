@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
 import {Router} from '@angular/router';
 
@@ -12,10 +12,12 @@ import * as firebase from 'firebase/app';
   styleUrls: [ './error-detection.component.css' ]
 })
 
-export class ErrorDetectionComponent {
+export class ErrorDetectionComponent implements OnInit {
   issues: FirebaseListObservable<any>;
-  constructor(private location: Location, private db: AngularFireDatabase, public afAuth: AngularFireAuth, private router: Router ) {
+  constructor(private location: Location, private db: AngularFireDatabase, public afAuth: AngularFireAuth, private router: Router) {
     this.issues = db.list('/issues/');
+  }
+  ngOnInit(): void {
   }
   navigate(uid): void {
     this.router.navigate(['./errprevention', uid]);
