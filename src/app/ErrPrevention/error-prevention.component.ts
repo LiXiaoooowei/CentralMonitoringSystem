@@ -29,13 +29,19 @@ export class ErrorPreventionComponent {
   }
 
   getQuote(symbol, time): void {
-    this.stockQuoteService.getQuote(symbol, time).then(function (val) {
-      document.getElementById(symbol + time).innerHTML = val;
+    this.stockQuoteService.getQuote(symbol, time).then(val => {
       firebase.database().ref().child('traders').child(this.uid).child('records').child(time + symbol)
         .update({
           price_ext: val
         });
-    }).catch();
+      console.log(val);
+    }).catch(error => {
+      firebase.database().ref().child('traders').child(this.uid).child('records').child(time + symbol)
+        .update({
+          price_ext: 'error'
+        });
+      console.log('error');
+    });
   }
 
   correctQuote(symbol, time, price_ext, price_int, amount): void {

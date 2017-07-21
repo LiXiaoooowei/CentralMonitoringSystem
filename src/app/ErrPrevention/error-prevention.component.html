@@ -16,7 +16,8 @@
         <td>{{record.symbol}}</td>
         <td>{{record.amount}}</td>
         <td>{{record.price_int}}</td>
-        <td id="{{record.symbol+record.time}}">{{getQuote(record.symbol, record.time)}}</td>
+        <td *ngIf="record.price_ext; else loading">{{record.price_ext}}</td>
+        <ng-template #loading>{{getQuote(record.symbol, record.time)}}</ng-template>
       </tr>
     </table>
   </div>
